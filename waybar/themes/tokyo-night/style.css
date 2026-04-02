@@ -1,0 +1,109 @@
+* {
+    border: none;
+    font-family: "JetBrainsMono Nerd Font";
+    font-weight: bold;
+    font-size: 16px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: rgba(26, 27, 38, 0.95); /* Tokyo Night Dark */
+    color: #c0caf5;
+    border-bottom: 2px solid rgba(187, 154, 247, 0.3);
+}
+
+/* Workspaces pill container */
+#workspaces {
+    background: rgba(36, 40, 59, 0.8);
+    margin: 5px 10px;
+    padding: 0 5px;
+    border-radius: 12px;
+    border: 1px solid rgba(65, 72, 104, 0.5);
+}
+
+#workspaces button {
+    color: #c0caf5;
+    padding: 0 10px;
+    margin: 4px 2px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+#workspaces button:hover {
+    background: rgba(65, 72, 104, 0.8);
+}
+
+#workspaces button.active {
+    background: #bb9af7; /* Tokyo Night Purple */
+    color: #1a1b26;
+    box-shadow: 0 0 10px rgba(187, 154, 247, 0.4);
+}
+
+#workspaces button.urgent {
+    background-color: transparent;
+    color: #f7768e; /* Tokyo Night Red */
+}
+
+/* Individual Module Pillars */
+#clock,
+#battery,
+#cpu,
+#memory,
+#network,
+#pulseaudio,
+#tray,
+#power-profiles-daemon,
+#bluetooth {
+    background: rgba(36, 40, 59, 0.85);
+    padding: 0 14px;
+    margin: 5px 4px;
+    border-radius: 10px;
+    border: 1px solid rgba(65, 72, 104, 0.3);
+    transition: all 0.3s ease;
+}
+
+/* Hover effects for modules */
+#clock:hover,
+#battery:hover,
+#cpu:hover,
+#memory:hover,
+#network:hover,
+#pulseaudio:hover {
+    background: rgba(41, 46, 66, 0.95);
+    border: 1px solid rgba(187, 154, 247, 0.3);
+}
+
+#clock {
+    color: #bb9af7;
+    background: rgba(36, 40, 59, 0.6);
+}
+
+#pulseaudio { color: #bb9af7; }
+#network { color: #7aa2f7; }
+#cpu { color: #9ece6a; }
+#memory { color: #e0af68; }
+#battery { color: #f7768e; }
+#power-profiles-daemon { color: #bb9af7; }
+
+#tray {
+    padding: 0 10px;
+    background: rgba(36, 40, 59, 0.4);
+}
+
+/* Tooltips */
+tooltip {
+    background: rgba(26, 27, 38, 0.98);
+    border: 1px solid #bb9af7;
+    border-radius: 10px;
+}
+
+tooltip label {
+    color: #c0caf5;
+    padding: 8px;
+}
+
+#battery.warning:not(.charging) { color: #f6c177; border-color: #f6c177; }
+
+#battery.critical:not(.charging),
+#cpu.critical,
+#memory.critical  { color: #eb6f92; border-color: #eb6f92; }

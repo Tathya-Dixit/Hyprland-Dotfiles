@@ -1,0 +1,114 @@
+{
+    "layer": "top",
+    "position": "top",
+    "mod": "dock",
+    "exclusive": true,
+    "passthrough": false,
+    "gtk-layer-shell": true,
+    "height": 40,
+    "spacing": 8,
+    "modules-left": [
+        "power-profiles-daemon",
+        "cpu",
+        "memory"
+    ],
+    "modules-center": [
+        "hyprland/workspaces"
+    ],
+    "modules-right": [
+        "network",
+        "bluetooth",
+        "pulseaudio",
+        "tray",
+        "battery",
+        "clock"
+    ],
+    "power-profiles-daemon": {
+        "format": "{icon}",
+        "tooltip-format": "Power profile: {profile}",
+        "tooltip": true,
+        "format-icons": {
+            "default": "",
+            "performance": "",
+            "balanced": "",
+            "power-saver": ""
+        }
+    },
+    "cpu": {
+        "format": " {usage}%",
+        "tooltip": true,
+        "on-click": "alacritty -e btop",
+        "states": {"critical": 90},
+        "on-update": "/home/tathya/.config/waybar/scripts/usage_alert.sh cpu {usage}"
+    
+    },
+    "memory": {
+        "format": " {}%",
+        "on-click": "alacritty -e btop",
+        "states": {"critical": 90},
+        "on-update": "/home/tathya/.config/waybar/scripts/usage_alert.sh memory {}"
+    
+    },
+    "hyprland/workspaces": {
+        "on-click": "activate",
+        "active-only": false,
+        "all-outputs": true,
+        "format": "{icon}",
+        "format-icons": {
+            "urgent": "󰊠",
+            "active": "󰮯",
+            "default": "󰊠"
+        }
+    },
+    "battery": {
+        "on-update": "/home/tathya/.config/waybar/scripts/battery_alert.sh",
+        "states": {"warning": 25, "critical": 15},
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% ",
+        "format-plugged": "{capacity}% ",
+        "format-alt": "{time} {icon}",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "network": {
+        "format-wifi": "{signalStrength}% ",
+        "format-ethernet": "{ipaddr}/{cidr}  ethernet",
+        "tooltip-format-wifi": "{essid}",
+        "tooltip-format-ethernet": "{ifname} via {gwaddr}",
+        "format-linked": "{ifname} (No IP)",
+        "format-disconnected": "Disconnected ⚠",
+        "on-click": "wifimenu"
+    },
+    "bluetooth": {
+        "format": " {status}",
+        "format-disabled": "",
+        "format-connected": " {num_connections}",
+        "tooltip-format": "{device_alias}",
+        "tooltip-format-connected": " {device_alias}",
+        "on-click": "rofi-bluetooth"
+    },
+    "pulseaudio": {
+        "format": "{volume}% {icon} {format_source}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": " {format_source}",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+    "tray": {
+        "icon-size": 16,
+        "spacing": 10
+    },
+    "clock": {
+        "format": "{:%H:%M}",
+        "format-alt": "{:%A, %B %d, %Y (%R)}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    }
+}

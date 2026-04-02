@@ -1,0 +1,121 @@
+* {
+    border: none;
+    font-family: "JetBrainsMono Nerd Font";
+    font-weight: bold;
+    font-size: 16px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: transparent;
+}
+
+/* The main floating island */
+#waybar > box {
+    background: rgba(46, 52, 64, 0.85); /* Deep Nord background with glass effect */
+    margin: 10px 15px;
+    padding: 2px 8px;
+    border-radius: 20px;
+    border: 2px solid rgba(129, 161, 193, 0.2);
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Workspaces pill container */
+#workspaces {
+    background: rgba(59, 66, 82, 0.9);
+    margin: 4px 10px;
+    padding: 0 5px;
+    border-radius: 12px;
+}
+
+#workspaces button {
+    color: #D8DEE9;
+    padding: 0 8px;
+    margin: 4px 2px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+#workspaces button:hover {
+    background: rgba(76, 86, 106, 0.8);
+}
+
+#workspaces button.active {
+    background: #88C0D0; /* Vibrant Nord blue */
+    color: #2E3440;
+    box-shadow: 0 0 10px rgba(136, 192, 208, 0.5);
+}
+
+#workspaces button.urgent {
+    background-color: transparent;
+    color: #BF616A;
+}
+
+/* Individual Module Pillars */
+#clock,
+#battery,
+#cpu,
+#memory,
+#network,
+#pulseaudio,
+#tray,
+#power-profiles-daemon,
+#bluetooth {
+    background: rgba(59, 66, 82, 0.9);
+    padding: 0 14px;
+    margin: 5px 4px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+/* Hover effects */
+#clock:hover,
+#battery:hover,
+#cpu:hover,
+#memory:hover,
+#network:hover,
+#pulseaudio:hover {
+    background: rgba(67, 76, 94, 0.95);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+#clock {
+    color: #EBCB8B;
+    background: rgba(59, 66, 82, 0.5);
+    border: 1px solid rgba(235, 203, 139, 0.2);
+}
+
+#pulseaudio { color: #B48EAD; }
+#network { color: #81A1C1; }
+#cpu { color: #A3BE8C; }
+#memory { color: #D08770; }
+#battery { color: #A3BE8C; }
+
+#battery.charging { color: #EBCB8B; }
+#battery.warning:not(.charging) { color: #f6c177; border-color: #f6c177; }
+#battery.critical:not(.charging),
+#cpu.critical,
+#memory.critical  { color: #eb6f92; border-color: #eb6f92; }
+
+@keyframes blink {
+    to {
+        background-color: rgba(191, 97, 106, 0.3);
+        color: #ECEFF4;
+    }
+}
+
+#tray {
+    padding: 0 10px;
+    background: rgba(59, 66, 82, 0.4);
+}
+
+/* Tooltips */
+tooltip {
+    background: rgba(46, 52, 64, 0.95);
+    border: 1px solid #81A1C1;
+    border-radius: 10px;
+}
+
+tooltip label {
+    color: #ECEFF4;
+}

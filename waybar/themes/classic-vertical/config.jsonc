@@ -1,0 +1,103 @@
+{
+    "layer": "top",
+    "position": "left",
+    "mod": "dock",
+    "exclusive": true,
+    "passthrough": false,
+    "gtk-layer-shell": true,
+    "width": 60,
+    "spacing": 0,
+    "modules-left": [
+        "clock",
+        "cpu",
+        "memory"
+    ],
+    "modules-center": [
+        "hyprland/workspaces"
+    ],
+    "modules-right": [
+        "pulseaudio",
+        "network",
+        "battery",
+        "tray",
+        "power-profiles-daemon"
+    ],
+    "clock": {
+        "format": "{:%H\n%M}",
+        "format-alt": "{:%d/%m\n%R}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+    "cpu": {
+        "format": "\n{usage}%",
+        "tooltip": true,
+        "on-click": "alacritty -e btop",
+        "states": {"critical": 90},
+        "on-update": "/home/tathya/.config/waybar/scripts/usage_alert.sh cpu {usage}"
+    
+    },
+    "memory": {
+        "format": "\n{}%",
+        "on-click": "alacritty -e btop",
+        "states": {"critical": 90},
+        "on-update": "/home/tathya/.config/waybar/scripts/usage_alert.sh memory {}"
+    
+    },
+    "hyprland/workspaces": {
+        "on-click": "activate",
+        "active-only": false,
+        "all-outputs": true,
+        "format": "{icon}",
+        "format-icons": {
+            "urgent": "󰊠",
+            "active": "󰮯",
+            "default": "󰊠"
+        }
+    },
+    "pulseaudio": {
+        "format": "{icon}\n{volume}%",
+        "format-bluetooth": "\n{volume}%",
+        "format-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+    "network": {
+        "format-wifi": "\n{signalStrength}%",
+        "format-ethernet": "󰈀",
+        "tooltip-format-wifi": "{essid}",
+        "tooltip-format-ethernet": "{ifname} via {gwaddr}",
+        "format-linked": "󱚵",
+        "format-disconnected": "⚠",
+        "on-click": "wifimenu"
+    },
+    "battery": {
+        "on-update": "/home/tathya/.config/waybar/scripts/battery_alert.sh",
+        "states": {"warning": 25, "critical": 15},
+        "format": "{icon}\n{capacity}%",
+        "format-charging": "\n{capacity}%",
+        "format-plugged": "\n{capacity}%",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "tray": {
+        "icon-size": 18,
+        "spacing": 10
+    },
+    "power-profiles-daemon": {
+        "format": "{icon}",
+        "tooltip-format": "Power profile: {profile}",
+        "tooltip": true,
+        "format-icons": {
+            "default": "",
+            "performance": "",
+            "balanced": "",
+            "power-saver": ""
+        }
+    }
+}

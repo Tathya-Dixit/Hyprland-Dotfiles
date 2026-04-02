@@ -1,0 +1,91 @@
+* {
+    border: none;
+    font-family: "JetBrainsMono Nerd Font";
+    font-weight: bold;
+    font-size: 14px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: rgba(46, 52, 64, 0.95);
+    color: #D8DEE9;
+    border-right: 2px solid rgba(129, 161, 193, 0.3);
+}
+
+/* Base style for all modules */
+#clock,
+#workspaces,
+#cpu,
+#memory,
+#pulseaudio,
+#network,
+#battery,
+#tray,
+#power-profiles-daemon {
+    background: rgba(59, 66, 82, 0.8);
+    margin: 4px 6px;
+    border-radius: 15px;
+    border: 1px solid rgba(76, 86, 106, 0.4);
+    padding: 10px 0;
+}
+
+/* Centering icons and text */
+label {
+    all: unset;
+}
+
+#clock, #cpu, #memory, #pulseaudio, #network, #battery, #power-profiles-daemon {
+    padding: 12px 0;
+}
+
+/* Clock at top */
+#clock {
+    background: rgba(129, 161, 193, 0.2);
+    color: #EBCB8B;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+/* Workspaces in Center */
+#workspaces {
+    padding: 4px 0;
+}
+
+#workspaces button {
+    color: #D8DEE9;
+    padding: 6px 0;
+    margin: 2px 8px;
+    border-radius: 12px;
+    transition: all 0.2s ease;
+}
+
+#workspaces button:hover {
+    background: rgba(76, 86, 106, 0.8);
+}
+
+#workspaces button.active {
+    background: #81A1C1;
+    color: #2E3440;
+}
+
+/* Colors */
+#pulseaudio { color: #B48EAD; }
+#network { color: #88C0D0; }
+#cpu { color: #A3BE8C; }
+#memory { color: #D08770; }
+#battery { color: #A3BE8C; }
+#power-profiles-daemon { color: #EBCB8B; }
+
+#tray {
+    padding: 10px 0;
+}
+
+#power-profiles-daemon {
+    margin-bottom: 15px;
+}
+
+#battery.warning:not(.charging) { color: #f6c177; border-color: #f6c177; }
+
+#battery.critical:not(.charging),
+#cpu.critical,
+#memory.critical  { color: #eb6f92; border-color: #eb6f92; }
