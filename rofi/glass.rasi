@@ -1,0 +1,122 @@
+/* Glass rofi theme — written from scratch, no base theme imported.
+ * Relies on the Hyprland layer_rule (namespace = "rofi", blur = true)
+ * for the actual frosted-glass blur behind the transparent fills below. */
+
+* {
+    font: "JetBrainsMono Nerd Font 11";
+
+    fg:       #e6e6e6ff;
+    fg-dim:   #b0b0b0ff;
+    accent:   rgba(255, 255, 255, 0.16);
+    accent-fg: #ffffffff;
+
+    background-color: transparent;
+    text-color: @fg;
+}
+
+window {
+    transparency: "real";
+    background-color: rgba(18, 18, 24, 0.32);
+
+    location: center;
+    width: 480px;
+
+    border: 1px solid;
+    border-color: rgba(255, 255, 255, 0.14);
+    border-radius: 18px;
+
+    padding: 14px;
+}
+
+mainbox {
+    background-color: transparent;
+    spacing: 10px;
+    children: [ "inputbar", "listview" ];
+}
+
+inputbar {
+    background-color: rgba(255, 255, 255, 0.07);
+    border-radius: 12px;
+    padding: 10px 14px;
+    spacing: 8px;
+    children: [ "prompt", "entry" ];
+}
+
+prompt {
+    background-color: transparent;
+    text-color: @fg-dim;
+}
+
+entry {
+    background-color: transparent;
+    text-color: @fg;
+    placeholder: "Search…";
+    placeholder-color: @fg-dim;
+}
+
+listview {
+    background-color: transparent;
+    columns: 1;
+    lines: 10;
+    spacing: 4px;
+    fixed-height: false;
+    scrollbar: true;
+}
+
+scrollbar {
+    background-color: transparent;
+    handle-color: rgba(255, 255, 255, 0.18);
+    handle-width: 4px;
+    border-radius: 4px;
+}
+
+element {
+    background-color: transparent;
+    text-color: @fg;
+    padding: 8px 12px;
+    border-radius: 10px;
+    orientation: horizontal;
+    spacing: 8px;
+}
+
+element normal.normal {
+    background-color: transparent;
+    text-color: @fg;
+}
+
+element alternate.normal {
+    background-color: rgba(255, 255, 255, 0.03);
+    text-color: @fg;
+}
+
+element selected.normal {
+    background-color: @accent;
+    text-color: @accent-fg;
+}
+
+element-icon {
+    size: 22px;
+    vertical-align: 0.5;
+}
+
+element-text {
+    vertical-align: 0.5;
+    text-color: inherit;
+}
+
+message {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 8px 12px;
+}
+
+textbox {
+    text-color: @fg;
+}
+
+error-message {
+    background-color: rgba(200, 60, 60, 0.25);
+    text-color: #ffffffff;
+    border-radius: 10px;
+    padding: 10px;
+}
