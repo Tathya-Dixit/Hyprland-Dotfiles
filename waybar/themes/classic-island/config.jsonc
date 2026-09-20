@@ -39,14 +39,14 @@
         "tooltip": true,
         "on-click": "alacritty -e btop",
         "states": {"critical": 90},
-        "on-update": "/home/tathya/.config/waybar/scripts/usage_alert.sh cpu {usage}"
+        "on-update": "~/.config/waybar/scripts/usage_alert.sh cpu {usage}"
     
     },
     "memory": {
         "format": " {}%",
         "on-click": "alacritty -e btop",
         "states": {"critical": 90},
-        "on-update": "/home/tathya/.config/waybar/scripts/usage_alert.sh memory {}"
+        "on-update": "~/.config/waybar/scripts/usage_alert.sh memory {}"
     
     },
     "hyprland/workspaces": {
@@ -61,7 +61,7 @@
         }
     },
     "battery": {
-        "on-update": "/home/tathya/.config/waybar/scripts/battery_alert.sh",
+        "on-update": "~/.config/waybar/scripts/battery_alert.sh",
         "states": {"warning": 25, "critical": 15},
         "format": "{capacity}% {icon}",
         "format-charging": "{capacity}% ",

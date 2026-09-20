@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-CONFIG_DIR="/home/tathya/.config/waybar"
+CONFIG_DIR="$HOME/.config/waybar"
 THEMES_DIR="$CONFIG_DIR/themes"
 
 # Get theme list

@@ -17,7 +17,7 @@ export BAT_THEME="base16"
 export PATH="$PATH:$HOME/flutter/bin"
 export CHROME_EXECUTABLE="/usr/bin/google-chrome-stable"
 
-export PATH="/home/tathya/flutter/bin:$PATH"
+export PATH="$HOME/flutter/bin:$PATH"
 
 if [ -d "$HOME/.local/bin" ] ;
   then PATH="$HOME/.local/bin:$PATH"
